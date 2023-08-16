@@ -28,6 +28,7 @@ isolated function getResourcePath(string[] paths) returns string {
 }
 
 isolated function forwardRequest(string resourceUrl, string[] paths, http:Request req) returns http:Response {
+    log:printInfo(req.getHeaderNames().toJsonString());
     http:Response response = new();
     response.statusCode = 500;
     do {
