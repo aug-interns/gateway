@@ -6,7 +6,7 @@ configurable Types:ApiResources resourceUrls = ?;
 
 service /api on new http:Listener(9091) {
 
-    isolated resource function post support/[string... paths](http:Request req) returns http:Response|http:ClientError {
+    isolated resource function default support/[string... paths](http:Request req) returns http:Response|http:ClientError {
         return forwardRequest(resourceUrls.supportService, paths, req);
     }
 
