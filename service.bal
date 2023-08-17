@@ -21,6 +21,18 @@ service /api on new http:Listener(9091) {
     isolated resource function get police/[string... paths](http:Request req) returns http:Response|http:ClientError {
         return forwardRequest(resourceUrls.policeService, paths, req);
     }
+
+    isolated resource function get certificate/[string... paths](http:Request req) returns http:Response|http:ClientError {
+        return forwardRequest(resourceUrls.certificateService, paths, req);
+    }
+
+    isolated resource function post certificate/[string... paths](http:Request req) returns http:Response|http:ClientError {
+        return forwardRequest(resourceUrls.certificateService, paths, req);
+    }
+
+    isolated resource function put certificate/[string... paths](http:Request req) returns http:Response|http:ClientError {
+        return forwardRequest(resourceUrls.certificateService, paths, req);
+    }
 }
 
 isolated function getResourcePath(string[] paths) returns string {

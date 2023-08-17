@@ -3,4 +3,5 @@ public type ApiResources record {|
     string identityService;
     string policeService;
     string supportService;
+    string certificateService;
 |};
